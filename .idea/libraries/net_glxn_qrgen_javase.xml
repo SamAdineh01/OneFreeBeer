@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="net.glxn.qrgen.javase" type="repository">
+    <properties maven-id="net.glxn.qrgen:javase:2.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/glxn/qrgen/javase/2.0/javase-2.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/zxing/javase/3.1.0/javase-3.1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/zxing/core/3.1.0/core-3.1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/glxn/qrgen/core/2.0/core-2.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jfree/jfreesvg/2.1/jfreesvg-2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

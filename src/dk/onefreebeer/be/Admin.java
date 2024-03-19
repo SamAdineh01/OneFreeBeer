@@ -1,0 +1,4 @@
+package dk.onefreebeer.be;
+
+public class Admin {
+}

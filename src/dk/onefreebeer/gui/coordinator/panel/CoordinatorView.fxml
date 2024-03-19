@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="475.0" prefWidth="1112.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.panel.CoordinatorController">
+   <children>
+      <TableView fx:id="eventsTable" layoutX="28.0" layoutY="177.0" prefHeight="200.0" prefWidth="710.0">
+        <columns>
+          <TableColumn fx:id="eventId" prefWidth="34.0" text="ID" />
+          <TableColumn fx:id="eventTitle" prefWidth="116.0" text="Title" />
+            <TableColumn fx:id="eventNote" prefWidth="116.0" text="Note" />
+            <TableColumn fx:id="eventLocation" prefWidth="116.0" text="Location" />
+            <TableColumn fx:id="eventStart" prefWidth="97.0" text="Start Date" />
+            <TableColumn fx:id="eventEnd" prefWidth="116.0" text="End Date" />
+            <TableColumn fx:id="eventDate" prefWidth="113.0" text="Date" />
+        </columns>
+      </TableView>
+      <Label layoutX="28.0" layoutY="142.0" prefHeight="29.0" prefWidth="92.0" text="Events">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="26.0" prefHeight="45.0" prefWidth="425.0" text="Coordinator Panel">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <TableView fx:id="ticketsTable" layoutX="762.0" layoutY="177.0" prefHeight="200.0" prefWidth="326.0">
+         <columns>
+            <TableColumn fx:id="ticketId" prefWidth="40.0" text="ID" />
+            <TableColumn fx:id="eventIdT" prefWidth="139.0" text="EventID" />
+            <TableColumn fx:id="ticket_type" prefWidth="146.0" text="Type" />
+         </columns>
+      </TableView>
+      <Label layoutX="762.0" layoutY="143.0" prefHeight="29.0" prefWidth="121.0" text="Tickets">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button layoutX="28.0" layoutY="387.0" mnemonicParsing="false" onAction="#onCreateEvent" text="Create" />
+      <Button layoutX="120.0" layoutY="387.0" mnemonicParsing="false" text="Update" />
+      <Button layoutX="217.0" layoutY="387.0" mnemonicParsing="false" text="Delete" />
+      <Button layoutX="762.0" layoutY="388.0" mnemonicParsing="false" onAction="#onCreateTicket" text="Create" />
+      <Button layoutX="854.0" layoutY="388.0" mnemonicParsing="false" text="Update" />
+      <Button layoutX="951.0" layoutY="388.0" mnemonicParsing="false" text="Delete" />
+   </children>
+</AnchorPane>
