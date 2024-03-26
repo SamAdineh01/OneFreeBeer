@@ -11,7 +11,7 @@ public class ConnectionManager {
     private final SQLServerDataSource ds;
     public ConnectionManager() {
         ds = new SQLServerDataSource();
-        ds.setDatabaseName("MovieDB");
+        ds.setDatabaseName("EventDB");
         ds.setUser("CSe2023b_e_25");
         ds.setPassword("CSe2023bE25#23 ");
         ds.setServerName("EASV-DB4");

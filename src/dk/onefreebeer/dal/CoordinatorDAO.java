@@ -50,7 +50,18 @@ public class CoordinatorDAO {
             return false;
         }
     }
-
+    public boolean deleteEvent(int eventId) {
+        String sql = "DELETE FROM Events WHERE id = ?";
+        try (Connection conn = connectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, eventId);
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
     public List<Event> getAllEvents() {
         List<Event> events = new ArrayList<>();
         String sql = "SELECT * FROM Events";

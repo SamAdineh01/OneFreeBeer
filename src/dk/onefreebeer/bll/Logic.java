@@ -21,6 +21,7 @@ public class Logic {
     public void createEvent(Event event) {
         coordinatorDAO.createEvent(event);
     }
+    public void deleteEvent(Event event) {coordinatorDAO.deleteEvent(event.getId());}
 
     public void createTicket(Ticket ticket) {
         coordinatorDAO.createTicket(ticket);

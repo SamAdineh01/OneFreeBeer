@@ -44,10 +44,10 @@ public class Model {
     public void createEvent(Event event){
         logic.createEvent(event);
     }
-
-    public void createTicket(Ticket ticket){
-        logic.createTicket(ticket);
+    public boolean deleteEvent(Event event) {logic.deleteEvent(event);
+        return false;
     }
+    public void createTicket(Ticket ticket){logic.createTicket(ticket);}
 
     public ObservableList<Ticket> getTickets(){
         updateTicketList();

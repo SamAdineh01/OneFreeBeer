@@ -10,11 +10,14 @@ import dk.onefreebeer.model.Model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -54,7 +57,6 @@ public class CoordinatorController implements Initializable {
     private TableColumn<Ticket, String> ticket_type;
 
 
-
     private ObservableList<Event> events = FXCollections.observableArrayList();
 
     private ObservableList<Ticket> tickets = FXCollections.observableArrayList();
@@ -81,6 +83,44 @@ public class CoordinatorController implements Initializable {
 
     }
 
+    @FXML
+    private void onDeleteEvent(ActionEvent actionEvent) {
+        Event selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
+        if (selectedEvent != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText("Delete Event");
+            alert.setContentText("Are you sure you want to delete this event?");
+
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    boolean deletionSuccessful = model.deleteEvent(selectedEvent);
+                    if (deletionSuccessful) {
+                        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                        successAlert.setTitle("Success");
+                        successAlert.setHeaderText(null);
+                        successAlert.setContentText("Event deleted successfully");
+                        successAlert.showAndWait();
+                        refreshEventList();
+                    } else {
+                        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                        errorAlert.setTitle("Error");
+                        errorAlert.setHeaderText(null);
+                        errorAlert.setContentText("Failed to delete event. Make sure to delete tickets associated with this event!");
+                        errorAlert.showAndWait();
+                    }
+                }
+            });
+        } else {
+            // Show an error message if no event is selected
+            Alert noEventSelectedAlert = new Alert(Alert.AlertType.ERROR);
+            noEventSelectedAlert.setTitle("Error");
+            noEventSelectedAlert.setHeaderText(null);
+            noEventSelectedAlert.setContentText("Please select an event to delete.");
+            noEventSelectedAlert.showAndWait();
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         eventId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -99,7 +139,6 @@ public class CoordinatorController implements Initializable {
         ticket_type.setCellValueFactory(new PropertyValueFactory<>("type"));
 
 
-
         events.setAll(model.getEvents());
         eventsTable.setItems(model.getEvents());
 
@@ -108,15 +147,13 @@ public class CoordinatorController implements Initializable {
         ticketsTable.setItems(model.getTickets());
 
 
-
-
     }
 
-    public void addToTableView(Event event){
+    public void addToTableView(Event event) {
         eventsTable.getItems().add(event);
     }
 
-    public void refreshEventList(){
+    public void refreshEventList() {
         this.events.setAll(model.getEvents());
     }
 
@@ -133,4 +170,6 @@ public class CoordinatorController implements Initializable {
         createTicket.setModel(this.model);
 
     }
+
+
 }

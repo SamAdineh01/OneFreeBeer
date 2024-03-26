@@ -12,5 +12,6 @@
     <orderEntry type="library" name="net.sourceforge.barbecue1" level="project" />
     <orderEntry type="library" name="net.glxn.qrgen.javase" level="project" />
     <orderEntry type="library" name="microsoft.sqlserver.mssql.jdbc" level="project" />
+    <orderEntry type="library" name="io.github.palexdev.materialfx" level="project" />
   </component>
 </module>
