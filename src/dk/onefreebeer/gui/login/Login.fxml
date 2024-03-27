@@ -3,17 +3,19 @@
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane prefHeight="206.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.login.LoginController">
+<BorderPane id="background" prefHeight="392.0" prefWidth="590.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.login.LoginController">
    <center>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="454.0">
+      <AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="454.0" stylesheets="@login.css">
          <children>
-            <GridPane layoutX="104.0" layoutY="49.0" prefHeight="110.0" prefWidth="245.0">
+            <GridPane layoutX="105.0" layoutY="174.0" prefHeight="110.0" prefWidth="245.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                </columnConstraints>
@@ -22,8 +24,8 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <PasswordField fx:id="passwordField" GridPane.rowIndex="1" />
-                  <TextField fx:id="userId" />
+                  <PasswordField fx:id="passwordField" promptText="Password" GridPane.rowIndex="1" />
+                  <TextField fx:id="userId" promptText="Username" />
                </children>
             </GridPane>
             <GridPane layoutX="191.0" layoutY="159.0" prefHeight="30.0" prefWidth="55.0">
@@ -34,10 +36,13 @@
                   <RowConstraints />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
-               <children>
-                  <MFXButton text="Log in" GridPane.rowIndex="1" />
-               </children>
             </GridPane>
+            <MFXButton layoutX="202.0" layoutY="300.0" text="Log in" />
+            <ImageView fitHeight="134.0" fitWidth="145.0" layoutX="157.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../data/logo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>
