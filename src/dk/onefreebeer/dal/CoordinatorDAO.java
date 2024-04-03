@@ -39,9 +39,8 @@ public class CoordinatorDAO {
             pstmt.setString(1, event.getTitle());
             pstmt.setString(2, event.getNote());
             pstmt.setString(3, event.getLocation());
-            pstmt.setString(4, event.getStartDate());
-            pstmt.setString(5, event.getEndDate());
-            pstmt.setString(6, event.getDate());
+            pstmt.setString(5, event.getDate());
+            pstmt.setString(6, event.getTime());
 
             pstmt.executeUpdate();
             return true;
@@ -158,7 +157,7 @@ public class CoordinatorDAO {
                             rs.getString("note"),
                             rs.getString("location"),
                             rs.getString("start"),
-                            rs.getString("end"),
+                            rs.getString("date"),
                             rs.getString("date"));
                 }
         } catch (SQLException e) {

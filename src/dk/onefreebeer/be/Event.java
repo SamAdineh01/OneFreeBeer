@@ -5,39 +5,28 @@ public class Event {
     String title;
     String note;
     String location;
-    String startDate;
-    String endDate;
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     String date;
+    String time;
 
-    public Event(int id, String title, String note, String location, String startDate, String endDate, String date) {
+
+    public Event(int id, String title, String note, String location, String date, String endDate, String time) {
         this.id = id;
         this.title = title;
         this.note = note;
         this.location = location;
-        this.startDate = startDate;
-        this.endDate = endDate;
         this.date = date;
+        this.time = time;
     }
 
     public Event(String title, String note, String location, String startDate, String endDate, String date) {
         this.title = title;
         this.note = note;
         this.location = location;
-        this.startDate = startDate;
-        this.endDate = endDate;
         this.date = date;
+        this.time = time;
     }
 
-    public Event(){
+    public Event() {
 
     }
 
@@ -73,22 +62,22 @@ public class Event {
         this.location = location;
     }
 
-    public String getStartDate() {
-        return startDate;
+
+    public String getDate() {
+        return date;
     }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
+    public void setDate(String endDate) {
+        this.date = endDate;
     }
 
-    public String getEndDate() {
-        return endDate;
+    public String getTime(){
+        return time;
     }
+    public void setTime(String time){
+        this.time = time;
 
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
     }
-
     @Override
     public String toString() {
         return "Event{" +
@@ -96,9 +85,10 @@ public class Event {
                 ", title='" + title + '\'' +
                 ", note='" + note + '\'' +
                 ", location='" + location + '\'' +
-                ", startDate='" + startDate + '\'' +
-                ", endDate='" + endDate + '\'' +
-                ", date='" + date + '\'' +
+                ", endDate='" + date + '\'' +
+                ", date='" + time + '\'' +
                 '}';
     }
+
+
 }

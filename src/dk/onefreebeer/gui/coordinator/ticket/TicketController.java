@@ -65,9 +65,8 @@ public class TicketController implements Initializable {
     public void loadPrintedTicket(){
         eventName.setText(ticket.getEvent().getTitle());
         eventNote.setText(ticket.getEvent().getNote());
-        startDate.setText(ticket.getEvent().getStartDate());
-        endDate.setText(ticket.getEvent().getEndDate());
-        date.setText(ticket.getEvent().getDate());
+        endDate.setText(ticket.getEvent().getDate());
+        date.setText(ticket.getEvent().getTime());
         ticketType.setText(ticket.getType());
         generateQR(ticket);
 
