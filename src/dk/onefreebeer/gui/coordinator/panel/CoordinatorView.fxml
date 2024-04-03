@@ -43,10 +43,10 @@
          </font>
       </Label>
       <Button layoutX="28.0" layoutY="387.0" mnemonicParsing="false" onAction="#onCreateEvent" text="Create" />
-      <Button layoutX="120.0" layoutY="387.0" mnemonicParsing="false" text="Update" />
+      <Button layoutX="120.0" layoutY="387.0" mnemonicParsing="false" onAction="#onEditEvent" text="Edit" />
       <Button layoutX="217.0" layoutY="387.0" mnemonicParsing="false" onAction="#onDeleteEvent" text="Delete" />
       <Button layoutX="762.0" layoutY="388.0" mnemonicParsing="false" onAction="#onCreateTicket" text="Create" />
-      <Button layoutX="854.0" layoutY="388.0" mnemonicParsing="false" text="Update" />
+      <Button layoutX="865.0" layoutY="387.0" mnemonicParsing="false" text="Edit" />
       <Button layoutX="951.0" layoutY="388.0" mnemonicParsing="false" text="Delete" />
    </children>
 </AnchorPane>

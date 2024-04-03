@@ -4,6 +4,7 @@ package dk.onefreebeer.gui.coordinator.panel;
 import dk.onefreebeer.be.Event;
 import dk.onefreebeer.be.Ticket;
 import dk.onefreebeer.gui.coordinator.event.CreateEvent;
+import dk.onefreebeer.gui.coordinator.event.EditEvent;
 import dk.onefreebeer.gui.coordinator.ticket.CreateTicket;
 import dk.onefreebeer.model.Model;
 
@@ -63,6 +64,7 @@ public class CoordinatorController implements Initializable {
 
 
     private Model model;
+    private Event eventToEdit;
 
     public CoordinatorController(){
         this.model = new Model();
@@ -82,7 +84,18 @@ public class CoordinatorController implements Initializable {
         createEvent.setModel(this.model);
 
     }
+    @FXML
+    public void onEditEvent(ActionEvent actionEvent) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dk/onefreebeer/gui/coordinator/event/EditEventView.fxml"));
+        Parent parent = loader.load();
+        Scene scene = new Scene(parent);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
 
+        EditEvent editEvent = loader.getController();
+        editEvent.setEventToEdit(eventToEdit);
+    }
     @FXML
     private void onDeleteEvent(ActionEvent actionEvent) {
         Event selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
@@ -172,4 +185,6 @@ public class CoordinatorController implements Initializable {
     }
 
 
+
 }
+
