@@ -14,10 +14,9 @@
           <TableColumn fx:id="eventId" prefWidth="34.0" text="ID" />
           <TableColumn fx:id="eventTitle" prefWidth="116.0" text="Title" />
             <TableColumn fx:id="eventNote" prefWidth="116.0" text="Note" />
-            <TableColumn fx:id="eventLocation" prefWidth="116.0" text="Location" />
-            <TableColumn fx:id="eventStart" prefWidth="97.0" text="Start Date" />
-            <TableColumn fx:id="eventEnd" prefWidth="116.0" text="End Date" />
-            <TableColumn fx:id="eventDate" prefWidth="113.0" text="Date" />
+            <TableColumn fx:id="eventLocation" prefWidth="141.0" text="Location" />
+            <TableColumn fx:id="eventDate" prefWidth="141.0" text="Date" />
+            <TableColumn fx:id="eventTime" prefWidth="161.0" text="Time" />
         </columns>
       </TableView>
       <Label layoutX="28.0" layoutY="142.0" prefHeight="29.0" prefWidth="92.0" text="Events">

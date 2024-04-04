@@ -41,11 +41,9 @@ public class CoordinatorController implements Initializable {
     @FXML
     private TableColumn<Event, String> eventLocation;
     @FXML
-    private TableColumn<Event, String> eventStart;
-    @FXML
-    private TableColumn<Event, String> eventEnd;
-    @FXML
     private TableColumn<Event, String> eventDate;
+    @FXML
+    private TableColumn<Event, String> eventTime;
 
 
     @FXML
@@ -140,9 +138,8 @@ public class CoordinatorController implements Initializable {
         eventTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         eventNote.setCellValueFactory(new PropertyValueFactory<>("note"));
         eventLocation.setCellValueFactory(new PropertyValueFactory<>("location"));
-        eventStart.setCellValueFactory(new PropertyValueFactory<>("startDate"));
-        eventEnd.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         eventDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        eventTime.setCellValueFactory(new PropertyValueFactory<>("time"));
 
         ticketId.setCellValueFactory(new PropertyValueFactory<>("id"));
         eventIdT.setCellValueFactory(cellData -> {

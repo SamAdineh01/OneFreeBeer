@@ -125,9 +125,8 @@ public class CoordinatorDAO {
                         rs.getString("title"),
                         rs.getString("note"),
                         rs.getString("location"),
-                        rs.getString("start"),
-                        rs.getString("end"),
-                        rs.getString("date"));
+                        rs.getString("date"),
+                        rs.getString("time"));
                 Ticket ticket = new Ticket(
                         rs.getInt("ticket_id"),
                         event,
@@ -156,9 +155,8 @@ public class CoordinatorDAO {
                             rs.getString("title"),
                             rs.getString("note"),
                             rs.getString("location"),
-                            rs.getString("start"),
                             rs.getString("date"),
-                            rs.getString("date"));
+                            rs.getString("time"));
                 }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -187,9 +185,8 @@ public class CoordinatorDAO {
                             rs.getString("title"),
                             rs.getString("note"),
                             rs.getString("location"),
-                            rs.getString("start"),
-                            rs.getString("end"),
-                            rs.getString("date"));
+                            rs.getString("date"),
+                            rs.getString("time"));
                     ticket = new Ticket(
                             rs.getInt("ticket_id"),
                             event,

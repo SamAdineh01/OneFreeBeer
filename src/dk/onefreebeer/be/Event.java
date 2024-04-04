@@ -26,7 +26,7 @@ public class Event {
         this.time = time;
     }
 
-    public Event() {
+    public Event(int eventId, String title, String note, String location, String date, String time) {
 
     }
 
