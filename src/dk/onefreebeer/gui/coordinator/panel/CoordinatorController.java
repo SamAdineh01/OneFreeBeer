@@ -102,7 +102,6 @@ public class CoordinatorController implements Initializable {
             alert.setTitle("Confirmation");
             alert.setHeaderText("Delete Event");
             alert.setContentText("Are you sure you want to delete this event?");
-
             alert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {
                     boolean deletionSuccessful = model.deleteEvent(selectedEvent);
@@ -123,7 +122,6 @@ public class CoordinatorController implements Initializable {
                 }
             });
         } else {
-            // Show an error message if no event is selected
             Alert noEventSelectedAlert = new Alert(Alert.AlertType.ERROR);
             noEventSelectedAlert.setTitle("Error");
             noEventSelectedAlert.setHeaderText(null);
@@ -180,8 +178,45 @@ public class CoordinatorController implements Initializable {
         createTicket.setModel(this.model);
 
     }
+    @FXML
+    private void onDeleteTicket() {
+        Ticket selectedTicket = ticketsTable.getSelectionModel().getSelectedItem();
 
+        if (selectedTicket != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirm Deletion");
+            alert.setHeaderText("Delete Ticket");
+            alert.setContentText("Are you sure you want to delete this ticket?");
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    boolean deletionSuccessful = model.deleteTicket(selectedTicket);
+                    if (deletionSuccessful) {
+                        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                        successAlert.setTitle("Success");
+                        successAlert.setHeaderText(null);
+                        successAlert.setContentText("Ticket deleted successfully");
+                        successAlert.showAndWait();
+                        refreshTicketList();
+                    } else {
+                        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                        errorAlert.setTitle("Error");
+                        errorAlert.setHeaderText(null);
+                        errorAlert.setContentText("Failed to delete ticket");
+                        errorAlert.showAndWait();
+                    }
+                }
+            });
+        } else {
+            Alert noTicketSelectedAlert = new Alert(Alert.AlertType.ERROR);
+            noTicketSelectedAlert.setTitle("Error");
+            noTicketSelectedAlert.setHeaderText(null);
+            noTicketSelectedAlert.setContentText("Please select a ticket to delete.");
+            noTicketSelectedAlert.showAndWait();
+        }
+    }
 
-
+    private void refreshTicketList() {
+        tickets.setAll(model.getTickets());
+    }
 }
 

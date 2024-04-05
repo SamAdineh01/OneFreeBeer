@@ -44,9 +44,11 @@ public class Model {
     public void createEvent(Event event){
         logic.createEvent(event);
     }
+
     public boolean deleteEvent(Event event) {logic.deleteEvent(event);
         return false;
     }
+    public void editEvent(Event event) {logic.editEvent(event);}
     public void createTicket(Ticket ticket){logic.createTicket(ticket);}
 
     public ObservableList<Ticket> getTickets(){
@@ -57,4 +59,8 @@ public class Model {
     private void updateTicketList(){
         this.tickets.setAll(logic.getTickets());
     }
-}
+
+    public boolean deleteTicket(Ticket ticket){logic.deleteTicket(ticket);
+        return false;
+    }
+    }

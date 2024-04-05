@@ -1,5 +1,7 @@
 package dk.onefreebeer.be;
 
+import java.time.LocalDate;
+
 public class Event {
     int id;
     String title;
@@ -59,13 +61,9 @@ public class Event {
         this.location = location;
     }
 
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String endDate) {
-        this.date = endDate;
+    public String getDate() {return date;}
+    public void setDate(String date) {
+        this.date =date;
     }
 
     public String getTime(){
@@ -73,8 +71,8 @@ public class Event {
     }
     public void setTime(String time){
         this.time = time;
-
     }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -86,6 +84,5 @@ public class Event {
                 ", date='" + time + '\'' +
                 '}';
     }
-
 
 }

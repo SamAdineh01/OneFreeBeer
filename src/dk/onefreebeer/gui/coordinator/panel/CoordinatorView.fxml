@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="475.0" prefWidth="1112.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.panel.CoordinatorController">
+<AnchorPane onDragDetected="#onDeleteTicket" prefHeight="475.0" prefWidth="1112.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.panel.CoordinatorController">
    <children>
       <TableView fx:id="eventsTable" layoutX="28.0" layoutY="177.0" prefHeight="200.0" prefWidth="710.0">
         <columns>
@@ -46,6 +46,6 @@
       <Button layoutX="217.0" layoutY="387.0" mnemonicParsing="false" onAction="#onDeleteEvent" text="Delete" />
       <Button layoutX="762.0" layoutY="388.0" mnemonicParsing="false" onAction="#onCreateTicket" text="Create" />
       <Button layoutX="865.0" layoutY="387.0" mnemonicParsing="false" text="Edit" />
-      <Button layoutX="951.0" layoutY="388.0" mnemonicParsing="false" text="Delete" />
+      <Button layoutX="951.0" layoutY="388.0" mnemonicParsing="false" onAction="#onDeleteTicket" text="Delete" />
    </children>
 </AnchorPane>

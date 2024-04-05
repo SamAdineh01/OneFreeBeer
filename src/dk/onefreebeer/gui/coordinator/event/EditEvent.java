@@ -17,9 +17,9 @@ public class EditEvent {
     @FXML
     private TextField locationField;
     @FXML
-    private TextField time;
+    private TextField timeField;
     @FXML
-    private DatePicker date;
+    private DatePicker dateField;
 
     private Model model;
     private Event eventToEdit;
@@ -36,10 +36,11 @@ public class EditEvent {
     }
     @FXML
     public void initialize() {
-        // Populate fields with event data
-        titleField.setText(eventToEdit.getTitle());
-        noteField.setText(eventToEdit.getNote());
-        locationField.setText(eventToEdit.getLocation());
+
+            titleField.setText(eventToEdit.getTitle());
+            noteField.setText(eventToEdit.getNote());
+            locationField.setText(eventToEdit.getLocation());
+            timeField.setText(eventToEdit.getTime());
     }
 
     @FXML
@@ -48,9 +49,8 @@ public class EditEvent {
         eventToEdit.setTitle(titleField.getText());
         eventToEdit.setNote(noteField.getText());
         eventToEdit.setLocation(locationField.getText());
-        eventToEdit.setDate(date.getValue().toString());
-        //eventToEdit.setTime(time.getValue().toString);
-
+        eventToEdit.setDate(dateField.getValue().toString());
+        eventToEdit.setTime(timeField.getText());
         model.updateEventList();
         Scene scene = (Scene) titleField.getScene();
         Stage stage = (Stage) scene.getWindow();
@@ -63,5 +63,6 @@ public class EditEvent {
         Stage stage = (Stage) scene.getWindow();
         stage.close();
     }
+
 
 }

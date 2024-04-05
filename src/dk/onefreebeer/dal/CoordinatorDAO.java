@@ -50,6 +50,24 @@ public class CoordinatorDAO {
             return false;
         }
     }
+    public boolean editEvent(Event event) {
+        String sql = "UPDATE Events SET title = ?, note = ?, location = ?, date = ?, time = ? WHERE id = ?";
+        try (Connection conn = connectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, event.getTitle());
+            pstmt.setString(2, event.getNote());
+            pstmt.setString(3, event.getLocation());
+            pstmt.setString(4, event.getDate());
+            pstmt.setString(5, event.getTime());
+            pstmt.setInt(6, event.getId()); // Assuming you have an ID field for events
+
+            int rowsUpdated = pstmt.executeUpdate();
+            return rowsUpdated > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     public boolean deleteEvent(int eventId) {
         String sql = "DELETE FROM Events WHERE id = ?";
@@ -114,7 +132,18 @@ public class CoordinatorDAO {
             return false;
         }
     }
-
+    public boolean deleteTicket(Ticket ticket) {
+        String sql = "DELETE FROM Tickets WHERE id = ?";
+        try (Connection conn = connectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, ticket.getId());
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
     public List<Ticket> getAllTickets() {
         List<Ticket> tickets = new ArrayList<>();
         String sql = "SELECT t.id AS ticket_id, t.ticket_type, t.uuid, e.id AS event_id, e.title, e.note, e.location, e.date, e.time FROM Tickets t JOIN Events e ON t.event_id = e.id";
@@ -201,4 +230,5 @@ public class CoordinatorDAO {
         }
         return ticket;
     }
+
 }
