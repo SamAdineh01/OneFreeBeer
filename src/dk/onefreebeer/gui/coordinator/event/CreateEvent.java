@@ -18,9 +18,9 @@ public class CreateEvent {
     @FXML
     private TextField locationField;
     @FXML
-    private DatePicker start;
+    private DatePicker date;
     @FXML
-    private DatePicker end;
+    private TextField time;
 
     private Model model;
 
@@ -36,7 +36,7 @@ public class CreateEvent {
     @FXML
     private void onSubmitButton(){
 
-        this.model.createEvent(new Event(titleField.getText(), noteField.getText(), locationField.getText(), start.getValue().toString(), end.getValue().toString(), "11.11.2024"));
+        this.model.createEvent(new Event(titleField.getText(), noteField.getText(), locationField.getText(), date.getValue().toString(), time.getText()));
         this.model.updateEventList();
 
         Scene scene = (Scene) titleField.getScene();

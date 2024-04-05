@@ -28,19 +28,19 @@
          </font>
       </Label>
       <TextField fx:id="locationField" layoutX="132.0" layoutY="174.0" prefHeight="24.0" prefWidth="199.0" promptText="Location" />
-      <Label layoutX="48.0" layoutY="212.0" text="Start">
+      <Label layoutX="48.0" layoutY="212.0" text="Date">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="50.0" layoutY="256.0" text="End">
+      <Label layoutX="50.0" layoutY="256.0" text="Time">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <DatePicker fx:id="start" layoutX="133.0" layoutY="213.0" promptText="DD.MM.YYYY" />
-      <DatePicker fx:id="end" layoutX="133.0" layoutY="257.0" promptText="DD.MM.YYYY" />
+      <DatePicker fx:id="start" layoutX="133.0" layoutY="215.0" prefHeight="25.0" prefWidth="199.0" promptText="DD.MM.YYYY" />
       <Button layoutX="270.0" layoutY="312.0" mnemonicParsing="false" onAction="#onUpdateButton" text="Create" />
       <Button layoutX="197.0" layoutY="312.0" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
+      <TextField layoutX="133.0" layoutY="259.0" prefHeight="25.0" prefWidth="199.0" />
    </children>
 </AnchorPane>

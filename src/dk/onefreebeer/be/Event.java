@@ -9,7 +9,8 @@ public class Event {
     String time;
 
 
-    public Event(int id, String title, String note, String location, String date, String endDate, String time) {
+
+    public Event(int eventId, String title, String note, String location, String date, String time) {
         this.id = id;
         this.title = title;
         this.note = note;
@@ -18,16 +19,12 @@ public class Event {
         this.time = time;
     }
 
-    public Event(String title, String note, String location, String startDate, String endDate, String date) {
+    public Event(String title, String note, String location, String date, String time) {
         this.title = title;
         this.note = note;
         this.location = location;
         this.date = date;
         this.time = time;
-    }
-
-    public Event(int eventId, String title, String note, String location, String date, String time) {
-
     }
 
     public int getId() {

@@ -16,31 +16,32 @@ public class CoordinatorDAO {
     private List<Event> eventList = new ArrayList<>();
 
     private final ConnectionManager connectionManager = new ConnectionManager();
-    public CoordinatorDAO(){
+
+    public CoordinatorDAO() {
         generateEvents();
     }
 
 
-    private void generateEvents(){
+    private void generateEvents() {
 //        eventList.add(new Event(1, "Free Beer", "Please bring some warm clothes.", "City Center", "20:00", "23:00", "11.04.2024"));
 //        eventList.add(new Event(2, "Absolutes", "No Information.", "EASV Bar", "21:00", "23:00", "23.03.2024"));
 
     }
 
-    public List<Event> getEventList(){
+    public List<Event> getEventList() {
         return getAllEvents();
     }
 
 
     public boolean createEvent(Event event) {
-        String sql = "INSERT INTO Events VALUES ( ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Events (title, note, location, date, time) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = connectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, event.getTitle());
             pstmt.setString(2, event.getNote());
             pstmt.setString(3, event.getLocation());
-            pstmt.setString(5, event.getDate());
-            pstmt.setString(6, event.getTime());
+            pstmt.setString(4, event.getDate());
+            pstmt.setString(5, event.getTime());
 
             pstmt.executeUpdate();
             return true;
@@ -49,6 +50,7 @@ public class CoordinatorDAO {
             return false;
         }
     }
+
     public boolean deleteEvent(int eventId) {
         String sql = "DELETE FROM Events WHERE id = ?";
         try (Connection conn = connectionManager.getConnection();
@@ -61,9 +63,10 @@ public class CoordinatorDAO {
             return false;
         }
     }
+
     public List<Event> getAllEvents() {
         List<Event> events = new ArrayList<>();
-        String sql = "SELECT * FROM Events";
+        String sql = "SELECT id, title, note, location, date, time FROM Events"; // Remove the 'start' column from the SQL query
         try (Connection conn = connectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
@@ -73,9 +76,8 @@ public class CoordinatorDAO {
                         rs.getString("title"),
                         rs.getString("note"),
                         rs.getString("location"),
-                        rs.getString("start"),
-                        rs.getString("end"),
-                        rs.getString("date")));
+                        rs.getString("date"),
+                        rs.getString("time")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,7 +85,6 @@ public class CoordinatorDAO {
 
         return events;
     }
-
 
     public boolean createTicket(Ticket ticket) {
         String sql = "INSERT INTO Tickets(event_id, ticket_type, uuid) VALUES ( ?, ?, ?)";
@@ -113,9 +114,10 @@ public class CoordinatorDAO {
             return false;
         }
     }
-        public List<Ticket> getAllTickets() {
+
+    public List<Ticket> getAllTickets() {
         List<Ticket> tickets = new ArrayList<>();
-        String sql = "SELECT t.id AS ticket_id, t.ticket_type, t.uuid, e.id AS event_id, e.title, e.note, e.location, e.start, e.[end], e.date FROM Tickets t JOIN Events e ON t.event_id = e.id";
+        String sql = "SELECT t.id AS ticket_id, t.ticket_type, t.uuid, e.id AS event_id, e.title, e.note, e.location, e.date, e.time FROM Tickets t JOIN Events e ON t.event_id = e.id";
         try (Connection conn = connectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
@@ -146,7 +148,7 @@ public class CoordinatorDAO {
         String sql = "SELECT * FROM Events WHERE id = ?";
         try (Connection conn = connectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-             pstmt.setInt(1, id);
+            pstmt.setInt(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     // Create the event if found
@@ -158,12 +160,12 @@ public class CoordinatorDAO {
                             rs.getString("date"),
                             rs.getString("time"));
                 }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
-        return event;
-    } catch (SQLException e) {
+            return event;
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
@@ -171,7 +173,7 @@ public class CoordinatorDAO {
 
     public Ticket getTicketById(int id) {
         Ticket ticket = null;
-        String sql = "SELECT t.id AS ticket_id, t.ticket_type, t.uuid, e.id AS event_id, e.title, e.note, e.location, e.start, e.[end], e.date " +
+        String sql = "SELECT t.id AS ticket_id, t.ticket_type, t.uuid, e.id AS event_id, e.title, e.note, e.location, e.date, e.time " +
                 "FROM Tickets t " +
                 "JOIN Events e ON t.event_id = e.id " +
                 "WHERE t.id = ?";
@@ -199,7 +201,4 @@ public class CoordinatorDAO {
         }
         return ticket;
     }
-
 }
-
-
