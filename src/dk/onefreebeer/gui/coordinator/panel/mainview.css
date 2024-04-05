@@ -1,0 +1,10 @@
+#background{
+    -fx-background-color: #333;
+}
+#btn {
+    -fx-background-color: #333;
+    -fx-border-color: #111;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #fff;
+}

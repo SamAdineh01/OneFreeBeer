@@ -1,39 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onDragDetected="#onDeleteTicket" prefHeight="475.0" prefWidth="1112.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.panel.CoordinatorController">
+<AnchorPane id="background" onDragDetected="#onDeleteTicket" prefHeight="475.0" prefWidth="1112.0" style="-fx-background-color: #333;" stylesheets="@mainview.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.panel.CoordinatorController">
    <children>
       <TableView fx:id="eventsTable" layoutX="28.0" layoutY="177.0" prefHeight="200.0" prefWidth="710.0">
         <columns>
-          <TableColumn fx:id="eventId" prefWidth="34.0" text="ID" />
-          <TableColumn fx:id="eventTitle" prefWidth="116.0" text="Title" />
-            <TableColumn fx:id="eventNote" prefWidth="116.0" text="Note" />
-            <TableColumn fx:id="eventLocation" prefWidth="141.0" text="Location" />
-            <TableColumn fx:id="eventDate" prefWidth="141.0" text="Date" />
-            <TableColumn fx:id="eventTime" prefWidth="161.0" text="Time" />
+          <TableColumn fx:id="eventId" prefWidth="34.0" text="ID" visible="false" />
+          <TableColumn fx:id="eventTitle" prefWidth="133.0" text="Title" />
+            <TableColumn fx:id="eventNote" prefWidth="184.0" text="Note" />
+            <TableColumn fx:id="eventLocation" prefWidth="181.0" text="Location" />
+            <TableColumn fx:id="eventDate" prefWidth="117.0" text="Date" />
+            <TableColumn fx:id="eventTime" prefWidth="94.0" text="Time" />
         </columns>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </TableView>
       <Label layoutX="28.0" layoutY="142.0" prefHeight="29.0" prefWidth="92.0" text="Events">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="35.0" layoutY="26.0" prefHeight="45.0" prefWidth="425.0" text="Coordinator Panel">
+      <Label layoutX="393.0" layoutY="38.0" prefHeight="54.0" prefWidth="326.0" text="Coordinator Panel">
          <font>
             <Font name="System Bold" size="37.0" />
          </font>
       </Label>
       <TableView fx:id="ticketsTable" layoutX="762.0" layoutY="177.0" prefHeight="200.0" prefWidth="326.0">
          <columns>
-            <TableColumn fx:id="ticketId" prefWidth="40.0" text="ID" />
-            <TableColumn fx:id="eventIdT" prefWidth="139.0" text="EventID" />
-            <TableColumn fx:id="ticket_type" prefWidth="146.0" text="Type" />
+            <TableColumn fx:id="ticketId" prefWidth="40.0" text="ID" visible="false" />
+            <TableColumn fx:id="eventIdT" prefWidth="175.0" text="Event" />
+            <TableColumn fx:id="ticket_type" prefWidth="150.0" text="Type" />
          </columns>
       </TableView>
       <Label layoutX="762.0" layoutY="143.0" prefHeight="29.0" prefWidth="121.0" text="Tickets">
@@ -41,11 +52,44 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Button layoutX="28.0" layoutY="387.0" mnemonicParsing="false" onAction="#onCreateEvent" text="Create" />
-      <Button layoutX="120.0" layoutY="387.0" mnemonicParsing="false" onAction="#onEditEvent" text="Edit" />
-      <Button layoutX="217.0" layoutY="387.0" mnemonicParsing="false" onAction="#onDeleteEvent" text="Delete" />
-      <Button layoutX="762.0" layoutY="388.0" mnemonicParsing="false" onAction="#onCreateTicket" text="Create" />
-      <Button layoutX="865.0" layoutY="387.0" mnemonicParsing="false" text="Edit" />
-      <Button layoutX="951.0" layoutY="388.0" mnemonicParsing="false" onAction="#onDeleteTicket" text="Delete" />
+      <ImageView fitHeight="122.0" fitWidth="121.0" layoutX="14.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../data/logo1.png" />
+         </image>
+      </ImageView>
+      <ButtonBar layoutX="783.0" layoutY="45.0" prefHeight="40.0" prefWidth="200.0" />
+      <SplitMenuButton layoutX="1034.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="User">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Sign out" />
+        </items>
+      </SplitMenuButton>
+      <BorderPane layoutX="20.0" layoutY="390.0" prefHeight="50.0" prefWidth="182.0" styleClass="toolbar">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <center>
+            <Button id="btn" mnemonicParsing="false" onAction="#onEditEvent" text="Edit" BorderPane.alignment="CENTER" />
+         </center>
+         <left>
+            <Button id="btn" mnemonicParsing="false" onAction="#onCreateEvent" text="Create" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Button id="btn" mnemonicParsing="false" onAction="#onDeleteEvent" prefHeight="27.0" prefWidth="55.0" text="Delete" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <BorderPane layoutX="762.0" layoutY="390.0" prefHeight="50.0" prefWidth="182.0" styleClass="toolbar">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <left>
+            <Button id="btn" mnemonicParsing="false" onAction="#onCreateTicket" text="Create" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <Button id="btn" mnemonicParsing="false" text="Edit" BorderPane.alignment="CENTER" />
+         </center>
+         <right>
+            <Button id="btn" mnemonicParsing="false" onAction="#onDeleteTicket" text="Delete" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
    </children>
 </AnchorPane>
