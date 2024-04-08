@@ -14,11 +14,14 @@
     -fx-title-side: white;
     -fx-text-fill: white;
 }
+.table-row-cell{
+    -fx-border-color: #333;
+    -fx-table-cell-border-color:#111;}
 .table-view {
     -fx-background-color: rgb(70,70,70);
     -fx-text-fill: white;
     -fx-border-style: solid;
-    -fx-border-color: transparent;
+    -fx-border-color: #111;
     -fx-border-width: 0.083333em, 0.083333em;
 }
 
