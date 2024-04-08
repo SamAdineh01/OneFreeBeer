@@ -8,3 +8,45 @@
     -fx-background-radius: 5px;
     -fx-text-fill: #fff;
 }
+#table{
+    -fx-background-color: #3D3D3D;
+    -fx-prompt-text-opacity:100;
+    -fx-title-side: white;
+    -fx-text-fill: white;
+}
+.table-view {
+    -fx-background-color: rgb(70,70,70);
+    -fx-text-fill: white;
+    -fx-border-style: solid;
+    -fx-border-color: transparent;
+    -fx-border-width: 0.083333em, 0.083333em;
+}
+
+.table-view .column-header{
+    -fx-border-style: solid;
+    -fx-border-color: #222;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-insets: 0 1 1 0, 0 0 0 0;
+    -fx-border-width: 0.083333em, 0.083333em;
+}
+
+.table-view .column-header .label{
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header-background {
+    -fx-background-radius: 5px;
+    -fx-font-family: "Calibri";
+    -fx-background-color:  #333;
+
+}
+.table-view .scroll-bar{
+    -fx-background-color: #444;
+    -fx-border-color: #111;
+}
+.table-view .scroll-pane{
+    -fx-background-color: #111;
+    -fx-border-color: #222;
+}

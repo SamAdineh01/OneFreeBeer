@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="background" onDragDetected="#onDeleteTicket" prefHeight="475.0" prefWidth="1112.0" style="-fx-background-color: #333;" stylesheets="@coordinator/panel/mainview.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.panel.CoordinatorController">
+    <children>
+        <TableView fx:id="eventsTable" layoutX="28.0" layoutY="177.0" prefHeight="200.0" prefWidth="710.0">
+            <columns>
+                <TableColumn fx:id="eventId" prefWidth="34.0" text="ID" />
+                <TableColumn fx:id="eventTitle" prefWidth="116.0" text="Title" />
+                <TableColumn fx:id="eventNote" prefWidth="116.0" text="Event Coordinators" />
+                <TableColumn fx:id="eventLocation" prefWidth="141.0" text="Location" />
+                <TableColumn fx:id="eventDate" prefWidth="141.0" text="Date" />
+                <TableColumn fx:id="eventTime" prefWidth="161.0" text="Time" />
+            </columns>
+        </TableView>
+        <Label layoutX="28.0" layoutY="142.0" prefHeight="29.0" prefWidth="92.0" text="Events">
+            <font>
+                <Font name="System Bold" size="23.0" />
+            </font>
+        </Label>
+        <Label layoutX="440.0" layoutY="23.0" prefHeight="54.0" prefWidth="232.0" text="Admin Panel" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="37.0" />
+            </font>
+        </Label>
+        <TableView fx:id="ECTable" layoutX="762.0" layoutY="177.0" prefHeight="200.0" prefWidth="326.0">
+            <columns>
+                <TableColumn fx:id="ticketId" prefWidth="40.0" text="ID" />
+                <TableColumn fx:id="eventIdT" prefWidth="145.0" text="Name" />
+                <TableColumn fx:id="ticket_type" minWidth="0.0" prefWidth="140.0" text="Last Name" />
+            </columns>
+        </TableView>
+        <Label layoutX="762.0" layoutY="143.0" prefHeight="34.0" prefWidth="221.0" text="Event Coodrinators">
+            <font>
+                <Font name="System Bold" size="23.0" />
+            </font>
+        </Label>
+        <Button layoutX="28.0" layoutY="387.0" mnemonicParsing="false" onAction="#onDeleteEvent" text="Delete" />
+        <Button layoutX="762.0" layoutY="387.0" mnemonicParsing="false" onAction="#onCreateTicket" text="Create" />
+        <Button layoutX="854.0" layoutY="387.0" mnemonicParsing="false" text="Edit" />
+        <Button layoutX="925.0" layoutY="387.0" mnemonicParsing="false" onAction="#onDeleteTicket" text="Delete" />
+      <ImageView fitHeight="121.0" fitWidth="121.0" layoutX="14.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../data/logo1.jpg" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

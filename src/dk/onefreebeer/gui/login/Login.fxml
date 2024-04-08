@@ -40,7 +40,7 @@
             <MFXButton id="txtfield" layoutX="271.0" layoutY="307.0" text="Log in" />
             <ImageView fitHeight="134.0" fitWidth="145.0" layoutX="225.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../data/logo.png" />
+                  <Image url="@../../../../../data/logo1.jpg" />
                </image>
             </ImageView>
          </children>
