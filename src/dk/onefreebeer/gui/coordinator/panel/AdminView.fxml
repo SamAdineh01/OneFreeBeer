@@ -13,14 +13,14 @@
 
 <AnchorPane id="background" onDragDetected="#onDeleteTicket" prefHeight="475.0" prefWidth="1112.0" style="-fx-background-color: #333;" stylesheets="@mainview.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.panel.CoordinatorController">
     <children>
-        <TableView fx:id="eventsTable" layoutX="28.0" layoutY="177.0" prefHeight="200.0" prefWidth="710.0">
+        <TableView id="btn" fx:id="eventsTable" layoutX="28.0" layoutY="177.0" prefHeight="200.0" prefWidth="710.0">
             <columns>
                 <TableColumn fx:id="eventId" prefWidth="34.0" text="ID" visible="false" />
-                <TableColumn fx:id="eventTitle" prefWidth="116.0" text="Title" />
-                <TableColumn fx:id="eventNote" prefWidth="151.0" text="Event Coordinators" />
-                <TableColumn fx:id="eventLocation" prefWidth="135.0" text="Location" />
-                <TableColumn fx:id="eventDate" prefWidth="152.0" text="Date" />
-                <TableColumn fx:id="eventTime" prefWidth="155.0" text="Time" />
+                <TableColumn id="table" fx:id="eventTitle" prefWidth="116.0" text="Title" />
+                <TableColumn id="table" fx:id="eventNote" prefWidth="151.0" text="Event Coordinators" />
+                <TableColumn id="table" fx:id="eventLocation" prefWidth="135.0" text="Location" />
+                <TableColumn id="table" fx:id="eventDate" prefWidth="152.0" text="Date" />
+                <TableColumn id="table" fx:id="eventTime" prefWidth="155.0" text="Time" />
             </columns>
         </TableView>
         <Label layoutX="28.0" layoutY="142.0" prefHeight="29.0" prefWidth="92.0" text="Events">
@@ -28,16 +28,16 @@
                 <Font name="System Bold" size="23.0" />
             </font>
         </Label>
-        <Label layoutX="440.0" layoutY="39.0" prefHeight="54.0" prefWidth="232.0" text="Admin Panel" textFill="WHITE">
+        <Label layoutX="440.0" layoutY="41.0" prefHeight="54.0" prefWidth="232.0" text="Admin Panel" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="37.0" />
             </font>
         </Label>
-        <TableView fx:id="ECTable" layoutX="762.0" layoutY="177.0" prefHeight="200.0" prefWidth="326.0">
+        <TableView id="btn" fx:id="ECTable" layoutX="762.0" layoutY="177.0" prefHeight="200.0" prefWidth="326.0">
             <columns>
                 <TableColumn fx:id="ticketId" prefWidth="40.0" text="ID" visible="false" />
-                <TableColumn fx:id="eventIdT" prefWidth="164.0" text="Name" />
-                <TableColumn fx:id="ticket_type" minWidth="0.0" prefWidth="161.0" text="Last Name" />
+                <TableColumn id="table" fx:id="eventIdT" prefWidth="164.0" text="Name" />
+                <TableColumn id="table" fx:id="ticket_type" minWidth="0.0" prefWidth="161.0" text="Last Name" />
             </columns>
         </TableView>
         <Label layoutX="762.0" layoutY="143.0" prefHeight="34.0" prefWidth="221.0" text="Event Coodrinators">
