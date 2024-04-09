@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="background" onDragDetected="#onDeleteTicket" prefHeight="475.0" prefWidth="1112.0" stylesheets="@mainview.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.panel.CoordinatorController">
+<AnchorPane id="background" onDragDetected="#onDeleteTicket" prefHeight="475.0" prefWidth="1112.0" stylesheets="@../../mainview.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.panel.CoordinatorController">
    <children>
       <TableView id="btn" fx:id="eventsTable" layoutX="52.0" layoutY="176.0" prefHeight="200.0" prefWidth="655.0">
         <columns>

@@ -25,7 +25,7 @@
                </rowConstraints>
                <children>
                   <PasswordField id="txtfield" fx:id="passwordField" promptText="Password" GridPane.rowIndex="1" />
-                  <TextField id="txtfield" fx:id="userId" promptText="Username" stylesheets="@login.css" />
+                  <TextField id="txtfield" fx:id="usernameField" promptText="Username" stylesheets="@login.css" />
                </children>
             </GridPane>
             <GridPane layoutX="191.0" layoutY="159.0" prefHeight="30.0" prefWidth="55.0">
@@ -37,7 +37,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
             </GridPane>
-            <MFXButton id="txtfield" layoutX="271.0" layoutY="307.0" text="Log in" />
+            <MFXButton id="txtfield" layoutX="271.0" layoutY="307.0" onAction="#login" text="Log in" />
             <AnchorPane layoutX="225.0" layoutY="40.0">
                <children>
                   <ImageView fitHeight="134.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
