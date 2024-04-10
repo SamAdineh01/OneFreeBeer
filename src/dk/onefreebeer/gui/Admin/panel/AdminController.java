@@ -13,7 +13,7 @@ public class AdminController {
 
     @FXML
     private void openAddECWindow(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("*"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("gui/Admin/ec/AddEC.fxml"));
         Parent root = loader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

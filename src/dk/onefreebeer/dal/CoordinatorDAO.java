@@ -119,10 +119,8 @@ public class CoordinatorDAO {
 
             try (ResultSet generatedKeys = pstmt.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
-                    // Return the generated ticket ID
                     ticket.setId(generatedKeys.getInt(1));
                 } else {
-                    // No generated keys found
                     throw new SQLException("Creating ticket failed, no ID obtained.");
                 }
             }

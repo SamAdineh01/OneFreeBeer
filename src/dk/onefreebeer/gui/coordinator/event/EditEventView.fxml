@@ -38,9 +38,9 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <DatePicker fx:id="start" layoutX="133.0" layoutY="215.0" prefHeight="25.0" prefWidth="199.0" promptText="DD.MM.YYYY" />
+      <DatePicker fx:id="dateField" layoutX="133.0" layoutY="215.0" prefHeight="25.0" prefWidth="199.0" promptText="DD.MM.YYYY" />
       <Button layoutX="270.0" layoutY="312.0" mnemonicParsing="false" onAction="#onUpdateButton" text="Create" />
       <Button layoutX="197.0" layoutY="312.0" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
-      <TextField layoutX="133.0" layoutY="259.0" prefHeight="25.0" prefWidth="199.0" />
+      <TextField fx:id="timeField" layoutX="133.0" layoutY="259.0" prefHeight="25.0" prefWidth="199.0" />
    </children>
 </AnchorPane>
