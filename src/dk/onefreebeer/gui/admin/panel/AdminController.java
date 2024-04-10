@@ -1,4 +1,4 @@
-package dk.onefreebeer.gui.Admin.panel;
+package dk.onefreebeer.gui.admin.panel;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +13,7 @@ public class AdminController {
 
     @FXML
     private void openAddECWindow(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("gui/Admin/ec/AddEC.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dk/onefreebeer/gui/admin/ec/AddEC.fxml"));
         Parent root = loader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

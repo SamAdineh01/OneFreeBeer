@@ -1,4 +1,4 @@
-package dk.onefreebeer.gui.Admin.ec;
+package dk.onefreebeer.gui.admin.ec;
 
 import dk.onefreebeer.gui.login.UserManager;
 import javafx.event.ActionEvent;

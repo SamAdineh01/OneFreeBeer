@@ -1,8 +1,0 @@
-#background{
-    -fx-background-color: #333;
-}
-#txtfield{
-    -fx-background-color: #3D3D3D;
-    -fx-prompt-text-opacity:10;
-    -fx-text-fill: white;
-}

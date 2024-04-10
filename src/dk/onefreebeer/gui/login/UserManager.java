@@ -5,8 +5,8 @@ import java.util.HashMap;
 
 public class UserManager {
 
-    private static final HashMap<String, String> adminInfo = new HashMap<>();
-    private static final HashMap<String, String> ecInfo = new HashMap<>();
+    private static HashMap<String, String> adminInfo = new HashMap<>();
+    private static HashMap<String, String> ecInfo = new HashMap<>();
 
     static {
         adminInfo.put("Radelc", "Adminpass");

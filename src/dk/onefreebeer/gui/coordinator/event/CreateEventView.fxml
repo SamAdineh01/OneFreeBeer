@@ -8,39 +8,39 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="359.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.event.CreateEvent">
+<AnchorPane id="background" prefHeight="359.0" prefWidth="366.0" style="-fx-background-color: #333;" stylesheets="@../../mainview.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.coordinator.event.CreateEvent">
    <children>
-      <Label layoutX="51.0" layoutY="33.0" text="Title">
+      <Label layoutX="51.0" layoutY="33.0" text="Title" textFill="WHITE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="titleField" layoutX="133.0" layoutY="34.0" prefHeight="24.0" prefWidth="199.0" promptText="Enter Title" />
-      <Label layoutX="50.0" layoutY="104.0" text="Note">
+      <TextField id="txtfield" fx:id="titleField" layoutX="133.0" layoutY="34.0" prefHeight="24.0" prefWidth="199.0" promptText="Enter Title" stylesheets="@../../mainview.css" />
+      <Label layoutX="50.0" layoutY="104.0" text="Note" textFill="WHITE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
       <TextArea fx:id="noteField" layoutX="133.0" layoutY="75.0" prefHeight="83.0" prefWidth="199.0" promptText="Description" />
-      <Label layoutX="48.0" layoutY="176.0" text="Location">
+      <Label layoutX="48.0" layoutY="176.0" text="Location" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="locationField" layoutX="132.0" layoutY="174.0" prefHeight="24.0" prefWidth="199.0" promptText="Location" />
-      <Label layoutX="48.0" layoutY="212.0" text="Date">
+      <TextField id="txtfield" fx:id="locationField" layoutX="132.0" layoutY="174.0" prefHeight="24.0" prefWidth="199.0" promptText="Location" stylesheets="@../../mainview.css" />
+      <Label layoutX="48.0" layoutY="212.0" text="Date" textFill="WHITE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="50.0" layoutY="256.0" text="Time">
+      <Label layoutX="50.0" layoutY="256.0" text="Time" textFill="WHITE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="270.0" layoutY="312.0" mnemonicParsing="false" onAction="#onSubmitButton" text="Create" />
-      <Button layoutX="197.0" layoutY="312.0" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
-      <TextField fx:id="time" layoutX="133.0" layoutY="259.0" prefHeight="25.0" prefWidth="199.0" promptText="Time" />
+      <Button id="btn" layoutX="270.0" layoutY="312.0" mnemonicParsing="false" onAction="#onSubmitButton" stylesheets="@../../mainview.css" text="Create" />
+      <Button id="btn" layoutX="197.0" layoutY="312.0" mnemonicParsing="false" onAction="#onCancel" stylesheets="@../../mainview.css" text="Cancel" />
+      <TextField id="txtfield" fx:id="time" layoutX="133.0" layoutY="259.0" prefHeight="25.0" prefWidth="199.0" promptText="Time" stylesheets="@../../mainview.css" />
       <DatePicker fx:id="date" layoutX="132.0" layoutY="215.0" prefHeight="25.0" prefWidth="199.0" promptText="DD.MM.YYYY" />
    </children>
 </AnchorPane>

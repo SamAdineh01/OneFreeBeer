@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="background" prefHeight="475.0" prefWidth="1112.0" style="-fx-background-color: #333;" stylesheets="@../../mainview.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.Admin.panel.AdminController">
+<AnchorPane id="background" prefHeight="475.0" prefWidth="1112.0" style="-fx-background-color: #333;" stylesheets="@../../mainview.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.admin.panel.AdminController">
     <children>
         <TableView id="btn" fx:id="eventsTable" layoutX="28.0" layoutY="177.0" prefHeight="200.0" prefWidth="710.0">
             <columns>

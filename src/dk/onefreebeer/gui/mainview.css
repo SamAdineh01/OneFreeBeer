@@ -1,6 +1,18 @@
 #background{
     -fx-background-color: #333;
 }
+
+#txtfield{
+    -fx-background-color: #3D3D3D;
+    -fx-prompt-text-opacity:10;
+    -fx-text-fill: white;
+}
+.text-area{
+    -fx-background-color: #3D3D3D;
+    -fx-prompt-text-opacity:10;
+    -fx-text-fill: black;
+}
+
 #btn {
     -fx-background-color: #333;
     -fx-border-color: #111;
@@ -8,15 +20,18 @@
     -fx-background-radius: 5px;
     -fx-text-fill: #fff;
 }
+
 #table{
     -fx-background-color: #3D3D3D;
     -fx-prompt-text-opacity:100;
     -fx-title-side: white;
     -fx-text-fill: white;
 }
+
 .table-row-cell{
     -fx-border-color: #333;
     -fx-table-cell-border-color:#111;}
+
 .table-view {
     -fx-background-color: rgb(70,70,70);
     -fx-text-fill: white;
@@ -45,10 +60,12 @@
     -fx-background-color:  #333;
 
 }
+
 .table-view .scroll-bar{
     -fx-background-color: #444;
     -fx-border-color: #111;
 }
+
 .table-view .scroll-pane{
     -fx-background-color: #111;
     -fx-border-color: #222;
