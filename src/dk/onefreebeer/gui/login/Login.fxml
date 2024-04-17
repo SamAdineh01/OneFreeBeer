@@ -16,7 +16,7 @@
    <center>
       <AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="591.0">
          <children>
-            <ImageView fitHeight="134.0" fitWidth="145.0" layoutX="225.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo" fitHeight="134.0" fitWidth="145.0" layoutX="225.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../data/logo1.jpg" />
                </image>

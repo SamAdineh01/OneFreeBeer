@@ -45,8 +45,8 @@ public class Model {
         logic.createEvent(event);
     }
 
-    public boolean deleteEvent(Event event) {logic.deleteEvent(event);
-        return false;
+    public boolean deleteEvent(Event event){
+        return logic.deleteEvent(event);
     }
     public void editEvent(Event event) {logic.editEvent(event);}
     public void createTicket(Ticket ticket){logic.createTicket(ticket);}
@@ -60,7 +60,8 @@ public class Model {
         this.tickets.setAll(logic.getTickets());
     }
 
-    public boolean deleteTicket(Ticket ticket){logic.deleteTicket(ticket);
-        return false;
+    public boolean deleteTicket(Ticket ticket)
+    {
+        return logic.deleteTicket(ticket);
     }
-    }
+}

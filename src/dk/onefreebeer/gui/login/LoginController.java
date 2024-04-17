@@ -8,9 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+import javafx.scene.image.ImageView;
 import java.io.IOException;
-
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.scene.image.Image;
 public class LoginController {
 
     @FXML
@@ -18,7 +20,18 @@ public class LoginController {
 
     @FXML
     private PasswordField passwordField;
+        @FXML
+        private ImageView logo;
 
+        @FXML
+        public void initialize(URL url, ResourceBundle resourceBundle) {
+            // Load the image
+            Image image = new Image("data/logo1.jpg"); // Replace "path_to_your_image.jpg" with the actual path
+
+            // Set the image to the ImageView
+            logo.setImage(image);
+
+        }
     @FXML
     private void login() throws IOException {
         String username = usernameField.getText();

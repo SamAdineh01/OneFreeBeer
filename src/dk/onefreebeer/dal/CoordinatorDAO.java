@@ -15,7 +15,16 @@ import java.util.UUID;
 public class CoordinatorDAO {
     private List<Event> eventList = new ArrayList<>();
 
+    private final Connection conn;
     private final ConnectionManager connectionManager = new ConnectionManager();
+
+    {
+        try {
+            conn = connectionManager.getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public CoordinatorDAO() {
         generateEvents();
@@ -70,15 +79,39 @@ public class CoordinatorDAO {
     }
 
     public boolean deleteEvent(int eventId) {
-        String sql = "DELETE FROM Events WHERE id = ?";
-        try (Connection conn = connectionManager.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        String deleteTicketsQuery = "DELETE FROM Tickets WHERE event_id = ?";
+        String deleteEvent = "DELETE FROM Events WHERE id = ?";
+        try {
+            conn.setAutoCommit(false);
+
+            // Delete tickets first
+            PreparedStatement pstmt = conn.prepareStatement(deleteTicketsQuery);
             pstmt.setInt(1, eventId);
-            int rowsAffected = pstmt.executeUpdate();
-            return rowsAffected > 0;
+            int rowsAffectedTickets = pstmt.executeUpdate();
+            pstmt.close();
+
+            // Delete event itself
+            PreparedStatement pstmt2 = conn.prepareStatement(deleteEvent);
+            pstmt2.setInt(1, eventId);
+            int rowsAffectedEvent = pstmt2.executeUpdate();
+            pstmt2.close();
+
+            conn.commit();
+            return (rowsAffectedTickets > 0 || rowsAffectedEvent > 0);
         } catch (SQLException e) {
+            try {
+                conn.rollback();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
             e.printStackTrace();
             return false;
+        } finally {
+            try {
+                conn.setAutoCommit(true);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
