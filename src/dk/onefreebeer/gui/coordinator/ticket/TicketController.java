@@ -4,8 +4,6 @@ import dk.onefreebeer.be.Ticket;
 import dk.onefreebeer.model.Model;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 
 
@@ -29,9 +27,16 @@ public class TicketController implements Initializable {
     @FXML
     private Label ticketType;
 
+
+    @FXML
+    private Label startDate;
+
+    @FXML
+    private Label time;
+
     @FXML
     private Label date;
-    private Label time;
+
     @FXML
     private ImageView qrCode;
     private Model model;
@@ -60,7 +65,7 @@ public class TicketController implements Initializable {
     public void loadPrintedTicket(){
         eventName.setText(ticket.getEvent().getTitle());
         eventNote.setText(ticket.getEvent().getNote());
-        time.setText(ticket.getEvent().getNote());
+        time.setText(ticket.getEvent().getDate());
         date.setText(ticket.getEvent().getTime());
         ticketType.setText(ticket.getType());
         generateQR(ticket);
@@ -73,6 +78,4 @@ public class TicketController implements Initializable {
         Image fxImage = new Image(new ByteArrayInputStream(out.toByteArray()));
         qrCode.setImage(fxImage);
     }
-
 }
-

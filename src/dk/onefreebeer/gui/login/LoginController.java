@@ -20,18 +20,16 @@ public class LoginController {
 
     @FXML
     private PasswordField passwordField;
-        @FXML
-        private ImageView logo;
 
-        @FXML
-        public void initialize(URL url, ResourceBundle resourceBundle) {
-            // Load the image
-            Image image = new Image("data/logo1.jpg"); // Replace "path_to_your_image.jpg" with the actual path
+    @FXML
+    private ImageView logo;
 
-            // Set the image to the ImageView
-            logo.setImage(image);
-
-        }
+    public LoginController() {
+      /*  Image image = new Image("data/logo1.jpg");
+        logo.setImage(image);
+        Cannot load image, keeps saying invalid file path
+       */
+    }
     @FXML
     private void login() throws IOException {
         String username = usernameField.getText();

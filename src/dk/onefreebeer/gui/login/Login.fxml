@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
-<?import java.net.URL?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -12,9 +11,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane id="background" prefHeight="392.0" prefWidth="590.0" style="-fx-background-color: black;" stylesheets="@login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.login.LoginController">
+<BorderPane id="background" prefHeight="392.0" prefWidth="590.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.onefreebeer.gui.login.LoginController">
    <center>
-      <AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="591.0">
+      <AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="591.0" stylesheets="@../mainview.css">
          <children>
             <ImageView fx:id="logo" fitHeight="134.0" fitWidth="145.0" layoutX="225.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -30,8 +29,8 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <PasswordField id="txtfield" fx:id="passwordField" promptText="Password" stylesheets="@login.css" GridPane.rowIndex="1" />
-                  <TextField id="txtfield" fx:id="usernameField" promptText="Username" stylesheets="@login.css" />
+                  <PasswordField id="txtfield" fx:id="passwordField" promptText="Password" GridPane.rowIndex="1" />
+                  <TextField id="txtfield" fx:id="usernameField" promptText="Username" />
                </children>
             </GridPane>
             <GridPane layoutX="191.0" layoutY="159.0" prefHeight="30.0" prefWidth="55.0">
@@ -45,10 +44,6 @@
             </GridPane>
             <MFXButton id="txtfield" layoutX="271.0" layoutY="307.0" onAction="#login" text="Log in" />
          </children>
-         <stylesheets>
-            <URL value="@login.css" />
-            <URL value="@../mainview.css" />
-         </stylesheets>
       </AnchorPane>
    </center>
 </BorderPane>
