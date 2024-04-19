@@ -10,7 +10,6 @@ public class UserManager {
 
     static {
         adminInfo.put("Radelc", "Adminpass");
-        adminInfo.put("SamAdineh", "Adminpassword");
 
         ecInfo.put("Rad01", "pass");
         ecInfo.put("Sam", "password");
